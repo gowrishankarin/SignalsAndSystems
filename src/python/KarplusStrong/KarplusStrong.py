@@ -47,6 +47,6 @@ class KarplusStrong:
 	
 	yMatrix = alphaMatrix * xMatrix
 
-	yMatrix.flatten()
+	y = yMatrix.flatten()
 	
-	return yMatrix
+	return y

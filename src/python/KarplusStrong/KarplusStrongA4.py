@@ -10,7 +10,8 @@ class KarplusStrongA4:
     
     def ks_wave(self, x, alpha, D):
         import numpy as np
-        from KarplusStrong import ks_loop
+        from KarplusStrong import KarplusStrong
+        ks = KarplusStrong()
         F0 = 440*np.array([pow(2, (-31./12.)), pow(2, (-19./12.)), pow(2, (-16./12.)), 
                            pow(2, (-14./12.)), pow(2, (-4./12.)), pow(2, (3./12.)), 
                             pow(2, (10./12.))])
@@ -38,7 +39,7 @@ class KarplusStrongA4:
                 currentAlpha = pow(currentAlpha, 8)
                 
             x = np.random.rand(currentM)
-            y = ks_loop(x, currentAlpha, currentDuration)
+            y = ks.ks_loop(x, currentAlpha, currentDuration)
             y = y[0:noSampleInChord]
             
             chord = chord + gain[i] * y
